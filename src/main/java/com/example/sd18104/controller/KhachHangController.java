@@ -28,9 +28,9 @@ public class KhachHangController {
 //        }
         LocalDate myObj = LocalDate.now();
         this.khachhang= new ArrayList<>();
-        khachhang.add(new KhachHangRequest("KH01","Văn","ĐỖ","Dương",myObj,"0987654321","Bạch Thượng","Hà Nam","Việt Nam","****"));
-        khachhang.add(new KhachHangRequest("KH02","Văn","ĐỖ","Dương",myObj,"0987654321","Bạch Thượng","Hà Nam","Việt Nam","****"));
-        khachhang.add(new KhachHangRequest("KH03","Văn","ĐỖ","Dương",myObj,"0987654321","Bạch Thượng","Hà Nam","Việt Nam","****"));
+//        khachhang.add(new KhachHangRequest("KH01","Văn","ĐỖ","Dương",myObj,"0987654321","Bạch Thượng","Hà Nam","Việt Nam","****"));
+//        khachhang.add(new KhachHangRequest("KH02","Văn","ĐỖ","Dương",myObj,"0987654321","Bạch Thượng","Hà Nam","Việt Nam","****"));
+//        khachhang.add(new KhachHangRequest("KH03","Văn","ĐỖ","Dương",myObj,"0987654321","Bạch Thượng","Hà Nam","Việt Nam","****"));
     }
     @GetMapping("index")
     public String index(Model model){
