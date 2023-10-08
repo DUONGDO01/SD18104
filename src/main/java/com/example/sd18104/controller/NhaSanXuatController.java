@@ -29,7 +29,7 @@ public class NhaSanXuatController {
      }
      @GetMapping("index")
     public String index(Model model){
-         this.nhaSX = this.repository.findAll();
+         this.nhaSX = repository.findAll();
          model.addAttribute("data",this.nhaSX);
          return "NhaSanXuat/index";
      }
