@@ -10,18 +10,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 //@RequestMapping("account")
 public class LoginCtroller {
     @GetMapping("login")
-    public String getlogin(){
+    public String getlogin() {
         return "login";
     }
-@PostMapping("login")
+
+    @PostMapping("login")
     public String login(
-            @RequestParam ("username") String user,
+            @RequestParam("username") String user,
             @RequestParam("password") String pass
 
-){
-    System.out.println("Tài Khoản :" +user + "Mật Khẩu : "+pass);
+    ) {
+        System.out.println("Tài Khoản :" + user + "Mật Khẩu : " + pass);
 
-    System.out.println("Tự hủy");
+        System.out.println("Tự hủy");
         return "login";
-}
+    }
 }

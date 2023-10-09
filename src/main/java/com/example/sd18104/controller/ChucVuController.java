@@ -13,57 +13,64 @@ import java.util.ArrayList;
 @RequestMapping("chuc-vu")
 public class ChucVuController {
     public ArrayList<ChucVuRequest> chucvu;
-    public ChucVuController(){
+
+    public ChucVuController() {
         this.chucvu = new ArrayList<>();
-        chucvu.add(new ChucVuRequest("CH01","Duong"));
-        chucvu.add(new ChucVuRequest("CH02","Minh"));
-        chucvu.add(new ChucVuRequest("CH013","Quyen"));
+        chucvu.add(new ChucVuRequest("CH01", "Duong"));
+        chucvu.add(new ChucVuRequest("CH02", "Minh"));
+        chucvu.add(new ChucVuRequest("CH013", "Quyen"));
     }
+
     @GetMapping("index")
-    public String index(Model model){
-        model.addAttribute("chucvu",chucvu);
+    public String index(Model model) {
+        model.addAttribute("chucvu", chucvu);
         return "ChucVu/index";
     }
+
     //create
     @GetMapping("create")
-    public String create(@ModelAttribute("chucvu") ChucVuRequest request){
+    public String create(@ModelAttribute("chucvu") ChucVuRequest request) {
 
         return "ChucVu/create";
     }
+
     @PostMapping("store")
-    public String store(@Valid @ModelAttribute("chucvu") ChucVuRequest request, BindingResult result){
+    public String store(@Valid @ModelAttribute("chucvu") ChucVuRequest request, BindingResult result) {
         chucvu.add(request);
         return "redirect:/chuc-vu/index";
     }
+
     //delete
     @GetMapping("delete/{ma}")
-    public String delete(@PathVariable("ma")  String ma){
-        for (int i = 0 ;i<this.chucvu.size();i++){
+    public String delete(@PathVariable("ma") String ma) {
+        for (int i = 0; i < this.chucvu.size(); i++) {
             ChucVuRequest cv = this.chucvu.get(i);
-            if (cv.getMa().equals(ma)){
+            if (cv.getMa().equals(ma)) {
                 this.chucvu.remove(i);
                 break;
             }
         }
         return "redirect:/chuc-vu/index";
     }
+
     //Update
     @GetMapping("edit/{ma}")
-    public String edit(@PathVariable("ma")String ma,Model m){
-        for (int i=0;i<this.chucvu.size();i++){
+    public String edit(@PathVariable("ma") String ma, Model m) {
+        for (int i = 0; i < this.chucvu.size(); i++) {
             ChucVuRequest cv = this.chucvu.get(i);
-            if(cv.getMa().equals(ma)){
-                m.addAttribute("chucvu",cv);
+            if (cv.getMa().equals(ma)) {
+                m.addAttribute("chucvu", cv);
             }
         }
         return "ChucVu/edit";
     }
+
     @PostMapping("update/{ma}")
-    public String update(@PathVariable("ma") String ma, ChucVuRequest request){
-        for (int i=0; i<this.chucvu.size();i++){
+    public String update(@PathVariable("ma") String ma, ChucVuRequest request) {
+        for (int i = 0; i < this.chucvu.size(); i++) {
             ChucVuRequest cv = this.chucvu.get(i);
-            if (cv.getMa().equals(ma)){
-                this.chucvu.set(i,request);
+            if (cv.getMa().equals(ma)) {
+                this.chucvu.set(i, request);
                 break;
 
             }

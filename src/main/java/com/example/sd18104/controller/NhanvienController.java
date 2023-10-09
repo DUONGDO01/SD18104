@@ -18,20 +18,21 @@ import java.util.*;
 public class NhanvienController {
 
 
-private List<NhanVien> ds;
+    private List<NhanVien> ds;
 
     @Autowired
     private NhanVienRepository repository;
 
-public NhanvienController(){
-    this.ds= new ArrayList<>();
-}
-@GetMapping("index")
-public String index(Model model){
-    this.ds=this.repository.findAll();
-    model.addAttribute("data",this.ds);
-    return "/NhanVien/index";
-}
+    public NhanvienController() {
+        this.ds = new ArrayList<>();
+    }
+
+    @GetMapping("index")
+    public String index(Model model) {
+        this.ds = this.repository.findAll();
+        model.addAttribute("data", this.ds);
+        return "/NhanVien/index";
+    }
 //xoa
 //    @GetMapping ("delete/{ma}")
 //    public String delete(@PathVariable("ma") String maNV) {
@@ -44,7 +45,6 @@ public String index(Model model){
 //}
 //return "redirect:nhan-vien/index";
 //    }
-
 
 
 //them
@@ -77,7 +77,7 @@ public String index(Model model){
 //        return "/NhanVien/store";
 //    }
 
-//    @PostMapping("update/{ma}")
+    //    @PostMapping("update/{ma}")
 //    public String update(@PathVariable("ma") String ma, NhanVienRequest req)
 //    {
 //        for (int i = 0; i < this.ds.size(); i++) {
@@ -92,10 +92,10 @@ public String index(Model model){
 //    }
 //
     @ModelAttribute("gioitinh")
-    public Map<Integer,String>getGender(){
+    public Map<Integer, String> getGender() {
         Map<Integer, String> map = new HashMap<>();
-        map.put(0,"Nam");
-        map.put(1,"Nữ");
+        map.put(0, "Nam");
+        map.put(1, "Nữ");
         return map;
     }
 }

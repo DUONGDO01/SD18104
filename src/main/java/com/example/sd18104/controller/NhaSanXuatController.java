@@ -22,44 +22,49 @@ public class NhaSanXuatController {
     private NsxRepository repository;
 
     public List<Nsx> nhaSX;
-     public NhaSanXuatController(){
-         this.nhaSX= new ArrayList<>();
+
+    public NhaSanXuatController() {
+        this.nhaSX = new ArrayList<>();
 //         nhaSXRequests.add(new NhaSXRequest("Nha01","Ngoc Anh"));
 //         nhaSXRequests.add(new NhaSXRequest("Nha02","Duong Do"));
-     }
-     @GetMapping("index")
-    public String index(Model model){
-         this.nhaSX = repository.findAll();
-         model.addAttribute("data",this.nhaSX);
-         return "NhaSanXuat/index";
-     }
-     //them
-     @GetMapping("create")
-    public String create( @ModelAttribute("nsx") NhaSXRequest request){
+    }
 
-         return "/NhaSanXuat/create";
-     }
-     @PostMapping("store")
-    public String store(@Valid @ModelAttribute("nsx") NhaSXRequest request,BindingResult result){
+    @GetMapping("index")
+    public String index(Model model) {
+        this.nhaSX = repository.findAll();
+        model.addAttribute("data", this.nhaSX);
+        return "NhaSanXuat/index";
+    }
+
+    //them
+    @GetMapping("create")
+    public String create(@ModelAttribute("nsx") NhaSXRequest request) {
+
+        return "/NhaSanXuat/create";
+    }
+
+    @PostMapping("store")
+    public String store(@Valid @ModelAttribute("nsx") NhaSXRequest request, BindingResult result) {
 //         System.out.println(request.getMa());
 //         System.out.println(request.getTen());
 //         nhaSXRequests.add(request);
-         return "redirect:/nha-san-xuat/index";
-     }
+        return "redirect:/nha-san-xuat/index";
+    }
 
     //sua
-     @GetMapping("edit/{ma}")
-    public String edti(@PathVariable("ma") String ma ,Model m){
+    @GetMapping("edit/{ma}")
+    public String edti(@PathVariable("ma") String ma, Model m) {
 //         for(int i = 0; i<this.nhaSXRequests.size();i++){
 //             NhaSXRequest nv = this.nhaSXRequests.get(i);
 //             if (nv.getMa().equals(ma)){
 //                 m.addAttribute("nsx",nv);
 //             }
 //         }
-         return "/NhaSanXuat/store";
-     }
-     @PostMapping("update/{ma}")
-    public String update(@PathVariable("ma") String ma , NhaSXRequest request){
+        return "/NhaSanXuat/store";
+    }
+
+    @PostMapping("update/{ma}")
+    public String update(@PathVariable("ma") String ma, NhaSXRequest request) {
 //         for (int i = 0;i<this.nhaSXRequests.size();i++){
 //             NhaSXRequest nsx = this.nhaSXRequests.get(i);
 //             if (nsx.getMa().equals(ma)){
@@ -67,11 +72,12 @@ public class NhaSanXuatController {
 //                 break;
 //             }
 //         }
-         return "redirect:/nha-san-xuat/index";
-     }
-     //xoa
+        return "redirect:/nha-san-xuat/index";
+    }
+
+    //xoa
     @GetMapping("delete/{ma}")
-    public String delete(@PathVariable("ma") String ma){
+    public String delete(@PathVariable("ma") String ma) {
 //         for (int i =0 ;i<this.nhaSXRequests.size();i++){
 //             NhaSXRequest nsx = this.nhaSXRequests.get(i);
 //             if(nsx.getMa().equals(ma)){
@@ -79,6 +85,6 @@ public class NhaSanXuatController {
 //                 break;
 //             }
 //         }
-         return "redirect:/nha-san-xuat/index";
+        return "redirect:/nha-san-xuat/index";
     }
 }

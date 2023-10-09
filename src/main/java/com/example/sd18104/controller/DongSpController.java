@@ -19,14 +19,15 @@ public class DongSpController {
 
     public List<DongSp> dongsp;
 
-    public DongSpController (){
+    public DongSpController() {
         this.dongsp = new ArrayList<>();
 
     }
+
     @GetMapping("index")
-    public String index(Model model){
+    public String index(Model model) {
         this.dongsp = repository.findAll();
-        model.addAttribute("dongsp",dongsp);
-return "DongSP/index";
+        model.addAttribute("dongsp", dongsp);
+        return "DongSP/index";
     }
 }

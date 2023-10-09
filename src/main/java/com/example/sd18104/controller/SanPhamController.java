@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,31 +22,36 @@ public class SanPhamController {
     private SanPhamRepository repository;
 
     public List<SanPham> sanpham;
-    public SanPhamController(){
+
+    public SanPhamController() {
         this.sanpham = new ArrayList<>();
 //        sanpham.add(new SanPhamRequest("SP01","SamSungS21"));
 //        sanpham.add(new SanPhamRequest("SP02","SamSungS22"));
 //        sanpham.add(new SanPhamRequest("SP03","SamSungS23"));
     }
+
     @GetMapping("index")
-    public String index(Model model){
+    public String index(Model model) {
         this.sanpham = this.repository.findAll();
-        model.addAttribute("sanpham",sanpham);
+        model.addAttribute("sanpham", sanpham);
         return "SanPham/index";
     }
+
     //create
     @GetMapping("create")
-    public String index(@ModelAttribute("sanpham") SanPhamRequest request){
+    public String index(@ModelAttribute("sanpham") SanPhamRequest request) {
         return "SanPham/create";
     }
+
     @PostMapping("store")
-    public String store(@Valid @ModelAttribute("sanpham") SanPhamRequest request, BindingResult result){
+    public String store(@Valid @ModelAttribute("sanpham") SanPhamRequest request, BindingResult result) {
 //       this.sanpham.add(request);
         return "redirect:/san-pham/index";
     }
+
     //delete
     @GetMapping("delete/{ma}")
-    public String delete(@PathVariable("ma") String ma, SanPhamRequest request){
+    public String delete(@PathVariable("ma") String ma, SanPhamRequest request) {
 //        for (int i = 0;i<this.sanpham.size();i++){
 //            SanPhamRequest sp = this.sanpham.get(i);
 //            if (sp.getMa().equals(ma)){
@@ -55,9 +61,10 @@ public class SanPhamController {
 //        }
         return "redirect:/san-pham/index";
     }
+
     //update
     @GetMapping("edit/{ma}")
-    public String edit(@PathVariable("ma") String ma,Model model, SanPhamRequest request){
+    public String edit(@PathVariable("ma") String ma, Model model, SanPhamRequest request) {
 //        for (int i = 0;i<this.sanpham.size();i++){
 //            SanPhamRequest sp = this.sanpham.get(i);
 //            if (sp.getMa().equals(ma)){
@@ -67,8 +74,9 @@ public class SanPhamController {
 //        }
         return "SanPham/edit";
     }
+
     @PostMapping("update/{ma}")
-    public String update(@PathVariable("ma") String ma,Model model, SanPhamRequest request){
+    public String update(@PathVariable("ma") String ma, Model model, SanPhamRequest request) {
 //        for (int i = 0;i<this.sanpham.size();i++){
 //            SanPhamRequest sp = this.sanpham.get(i);
 //            if (sp.getMa().equals(ma)){
