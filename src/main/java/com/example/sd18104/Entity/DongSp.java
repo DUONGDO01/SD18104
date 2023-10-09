@@ -9,12 +9,12 @@ import lombok.Setter;
 import java.util.UUID;
 
 @Entity
-@Table(name = "SanPham")
+@Table(name = "DongSP")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SanPham {
+public class DongSp {
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.AUTO)
