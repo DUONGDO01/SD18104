@@ -18,9 +18,9 @@ public class CuaHangController {
 
     public CuaHangController() {
         this.cuahang = new ArrayList<>();
-        cuahang.add(new CuaHangRequest("ch01", "Shopppe", "Nam Tu Liem", "Ha Noi", "VietNam"));
-        cuahang.add(new CuaHangRequest("ch02", "Grap", "Nam Tu Liem", "Ha Noi", "VietNam"));
-        cuahang.add(new CuaHangRequest("ch03", "Lazada", "Nam Tu Liem", "Ha Noi", "VietNam"));
+//        cuahang.add(new CuaHangRequest("ch01", "Shopppe", "Nam Tu Liem", "Ha Noi", "VietNam"));
+//        cuahang.add(new CuaHangRequest("ch02", "Grap", "Nam Tu Liem", "Ha Noi", "VietNam"));
+//        cuahang.add(new CuaHangRequest("ch03", "Lazada", "Nam Tu Liem", "Ha Noi", "VietNam"));
 
 
     }
