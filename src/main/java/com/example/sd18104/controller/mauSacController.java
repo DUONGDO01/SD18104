@@ -16,8 +16,8 @@ public class mauSacController {
 
     public mauSacController() {
         this.ds = new ArrayList<>();
-        ds.add(new mauSacRequest("MM01", "NSX"));
-        ds.add(new mauSacRequest("MM02", "NSX"));
+//        ds.add(new mauSacRequest("MM01", "NSX"));
+//        ds.add(new mauSacRequest("MM02", "NSX"));
     }
 
     @GetMapping("index")
