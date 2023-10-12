@@ -42,8 +42,8 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">Tên Đệm :</label>
-                <fs:input type="text" name="tendem" path="tendem" class="form-control"  aria-describedby="emailHelp"/>
-                <fs:errors path="tendem" cssStyle="color: red"></fs:errors>
+                <fs:input type="text" name="tendem" path="tenDem" class="form-control"  aria-describedby="emailHelp"/>
+                <fs:errors path="tenDem" cssStyle="color: red"></fs:errors>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Họ</label>
@@ -53,35 +53,35 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">Giới Tính : </label>
-                <input type="radio" name="gioitinh" value="0"> Nam
-                <input type="radio" name="gioitinh" value="1"> Nữ
-                <fs:errors path="gioitinh" cssStyle="color: red"></fs:errors>
+                <input type="radio" name="gioiTinh" value="Nam"> Nam
+                <input type="radio" name="gioiTinh" value="Nữ"> Nữ
+                <fs:errors path="gioiTinh" cssStyle="color: red"></fs:errors>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Ngày Sinh : </label>
-                <fs:input type="date" name="ngaysinh" path="ngaysinh" class="form-control" />
+                <fs:input type="date" name="ngaySinh" path="ngaySinh" class="form-control" />
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label">Địa Chỉ :</label>
-                <fs:input type="text" name="diachi" path="diachi" class="form-control"  aria-describedby="emailHelp"/>
+                <fs:input type="text" name="diaChi" path="diaChi" class="form-control"  aria-describedby="emailHelp"/>
 
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Số Điện Thoại : </label>
-                <fs:input type="number" name="dienthoai" path="dienthoai" class="form-control" id=""/>
+                <fs:input type="number" name="sdt" path="sdt" class="form-control" id=""/>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Mật khẩu :</label>
-                <fs:input type="password"  path="pass" class="form-control" name="pass " />
-                <fs:errors path="pass" cssStyle="color: red"></fs:errors>
+                <fs:input type="password"  path="matKhau" class="form-control" name="matKhau " />
+                <fs:errors path="matKhau" cssStyle="color: red"></fs:errors>
             </div>
-            <div class="mb-3">
-                <label for="" class="form-label">Trạng Thái :</label>
-                <input type="checkbox"  name="trangthai" value="true" > hoạt động
-                <input type="checkbox"  name="trangthai" value="false" > không hoạt động
-                <fs:errors path="trangthai" cssStyle="color: red"></fs:errors>
-            </div>
+<%--            <div class="mb-3">--%>
+<%--                <label for="" class="form-label">Trạng Thái :</label>--%>
+<%--                <input type="checkbox"  name="trangThai" value="true" > hoạt động--%>
+<%--                <input type="checkbox"  name="trangThai" value="false" > không hoạt động--%>
+<%--                <fs:errors path="trangthai" cssStyle="color: red"></fs:errors>--%>
+<%--            </div>--%>
             <button type="submit" class="btn btn-primary">Create</button>
         </fs:form>
     </div>

@@ -46,7 +46,7 @@
         <td>${ds.ten}</td>
         <td>${ds.tenDem}</td>
         <td>${ds.ho}</td>
-        <td>${ds.gioiTinh?'Nam':'nữ'}</td>
+        <td>${ds.gioiTinh}</td>
         <td>${ds.ngaySinh}</td>
         <td>${ds.diaChi}</td>
         <td>${ds.sdt}</td>

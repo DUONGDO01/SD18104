@@ -33,64 +33,70 @@ public class NhanvienController {
         model.addAttribute("data", this.ds);
         return "/NhanVien/index";
     }
-//xoa
-//    @GetMapping ("delete/{ma}")
-//    public String delete(@PathVariable("ma") String maNV) {
-//for(int i = 0 ;i<this.ds.size();i++){
-//    NhanVienRequest nv = this.ds.get(i);
-//    if(nv.getMa().equals(maNV)){
-//      this.ds.remove(i);
-//      break;
-//    }
-//}
-//return "redirect:nhan-vien/index";
-//    }
+
+    //xoa
+    @GetMapping("delete/{ma}")
+    public String delete(@PathVariable("ma") String maNV) {
+        NhanVien nv = this.repository.findByMa(maNV);
+        this.repository.delete(nv);
+        return "redirect:/nhan-vien/index";
+    }
 
 
-//them
-//    @GetMapping("create")
-//    public String formCreate(@ModelAttribute("nv") NhanVienRequest req, Model model){
-//
-//        return "/NhanVien/create";
-//    }
-//
-//    @PostMapping("store")
-//    public String Store(@Valid @ModelAttribute("nv") NhanVienRequest req, BindingResult result){
-//
-//    System.out.println("Mã : " +req.getMa() + "\r\nTên : " +req.getTen() + "\nTên Đệm : " +req.getTendem() + "\nHọ :" + req.getHo()+
-//            "\nGiới Tính :" +req.getGioitinh()+ "\nĐịa Chỉ : " +req.getDiachi() + "\nSĐT :" +req.getDienthoai() +" \nTrạng Thái :" +req.isTrangthai() + "\nNgày Sinh :" +req.getNgaysinh());
-//    ds.add(req);
-//        return "redirect:/nhan-vien/index";
-//}
-//sua
-//    @GetMapping("edit/{ma}")
-//    public String edit(@PathVariable("ma") String ma, Model m)
-//    {
-//        for (int i = 0; i < this.ds.size(); i++) {
-//            NhanVienRequest nv = this.ds.get(i);
-//            if (nv.getMa().equals(ma)) {
-//                m.addAttribute("nv", nv);
-//                break;
-//            }
-//        }
-//
-//        return "/NhanVien/store";
-//    }
+    //them
+    @GetMapping("create")
+    public String formCreate(@ModelAttribute("nv") NhanVienRequest req, Model model) {
 
-    //    @PostMapping("update/{ma}")
-//    public String update(@PathVariable("ma") String ma, NhanVienRequest req)
-//    {
-//        for (int i = 0; i < this.ds.size(); i++) {
-//            NhanVienRequest nv = this.ds.get(i);
-//            if (nv.getMa().equals(ma)) {
-//                this.ds.set(i, req);
-//                break;
-//            }
-//        }
-//
-//        return "redirect:/nhan-vien/index";
-//    }
-//
+        return "/NhanVien/create";
+    }
+
+    @PostMapping("store")
+    public String Store(@Valid @ModelAttribute("nv") NhanVienRequest req, BindingResult result) {
+
+        NhanVien nv = new NhanVien();
+        nv.setMa(req.getMa());
+        nv.setHo(req.getHo());
+        nv.setTen(req.getTen());
+        nv.setTenDem(req.getTenDem());
+        nv.setGioiTinh(req.getGioiTinh());
+        nv.setNgaySinh(req.getNgaySinh());
+        nv.setDiaChi(req.getDiaChi());
+        nv.setSdt(req.getSdt());
+        nv.setMatKhau(req.getMatKhau());
+
+        this.repository.save(nv);
+        return "redirect:/nhan-vien/index";
+    }
+
+    //sua
+    @GetMapping("edit/{ma}")
+    public String edit(@PathVariable("ma") String ma, Model m) {
+        NhanVien nv = this.repository.findByMa(ma);
+        m.addAttribute("nv", nv);
+
+
+        return "/NhanVien/store";
+    }
+
+    @PostMapping("update/{ma}")
+    public String update(@PathVariable("ma") String ma, NhanVienRequest req) {
+        NhanVien find = this.repository.findByMa(ma);
+        NhanVien nv = new NhanVien();
+        nv.setId(find.getId());
+        nv.setMa(req.getMa());
+        nv.setHo(req.getHo());
+        nv.setTen(req.getTen());
+        nv.setTenDem(req.getTenDem());
+        nv.setGioiTinh(req.getGioiTinh());
+        nv.setNgaySinh(req.getNgaySinh());
+        nv.setDiaChi(req.getDiaChi());
+        nv.setSdt(req.getSdt());
+        nv.setMatKhau(req.getMatKhau());
+        this.repository.save(nv);
+
+        return "redirect:/nhan-vien/index";
+    }
+
     @ModelAttribute("gioitinh")
     public Map<Integer, String> getGender() {
         Map<Integer, String> map = new HashMap<>();

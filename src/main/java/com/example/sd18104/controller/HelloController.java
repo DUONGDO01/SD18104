@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
-    @Autowired
-    private NhanVienRequest req;
+//    @Autowired
+//    private NhanVienRequest req;
 
-    @GetMapping("hello-page")
-    public String hello() {
-        System.out.println("Mã : " + req.getMa() + "\r\nTên : " + req.getTen() + "\nTên Đệm : " + req.getTendem() + "\nHọ :" + req.getHo() +
-                "\nGiới Tính :" + req.getGioitinh() + "\nĐịa Chỉ : " + req.getDiachi() + "\nSĐT :" + req.getDienthoai() + " \nTrạng Thái :" + req.isTrangthai() + "\nNgày Sinh :" + req.getNgaysinh());
-        return "hello";
-    }
+//    @GetMapping("hello-page")
+//    public String hello() {
+//        System.out.println("Mã : " + req.getMa() + "\r\nTên : " + req.getTen() + "\nTên Đệm : " + req.getTendem() + "\nHọ :" + req.getHo() +
+//                "\nGiới Tính :" + req.getGioitinh() + "\nĐịa Chỉ : " + req.getDiachi() + "\nSĐT :" + req.getDienthoai() + " \nTrạng Thái :" + req.isTrangthai() + "\nNgày Sinh :" + req.getNgaysinh());
+//        return "hello";
+//    }
 
 }

@@ -19,7 +19,7 @@ import java.util.UUID;
 public class NhanVien {
     @Id
     @Column(name = "Id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(name = "Ma")
@@ -38,7 +38,7 @@ public class NhanVien {
     private String gioiTinh;
 
     @Column(name = "NgaySinh")
-    private Date ngaySinh;
+    private String ngaySinh;
 
     @Column(name = "DiaChi")
     private String diaChi;
