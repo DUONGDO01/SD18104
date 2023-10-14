@@ -16,12 +16,12 @@
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Sản phẩm</title>
+    <title>Dòng Sản phẩm</title>
 </head>
 <body class="container">
 <div>
-    <h1 class="mt-4">Sản Phẩm</h1>
-    <a class="d-flex" style="text-decoration: none" href="/san-pham/create"> <button class="btn btn-success">Thêm</button></a>
+    <h1 class="mt-4">Dòng Sản Phẩm</h1>
+    <a class="d-flex" style="text-decoration: none" href="/Dong-SP/create"> <button class="btn btn-success">Thêm</button></a>
 </div>
 <br>
 <table class="table table-striped">
@@ -37,8 +37,8 @@
     <tr>
         <td>${sp.ma}</td>
         <td>${sp.ten}</td>
-        <td><a href="/dong-sp/edit/${sp.ma}">Update</a> </td>
-         <td><a href="/dong-sp/delete/${sp.ma}">delete</a> </td>
+        <td><a href="/Dong-SP/edit/${sp.ma}">Update</a> </td>
+         <td><a href="/Dong-SP/delete/${sp.ma}">delete</a> </td>
     </tr>
     </c:forEach>
     </tbody>

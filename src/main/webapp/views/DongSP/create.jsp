@@ -27,7 +27,7 @@
 <body>
 <div class="container">
     <div class="body">
-        <fs:form action="store" modelAttribute="sanpham" method="post">
+        <fs:form action="store" modelAttribute="dongsp" method="post">
             <div class="mb-3">
                 <label  class="form-label">Mã :</label>
                 <fs:input type="text" name="ma" path="ma" class="form-control"/>

@@ -22,6 +22,7 @@ public class mauSacController {
 
     @GetMapping("index")
     public String index(Model model) {
+
         model.addAttribute("data", this.ds);
         return "mauSac/index";
     }

@@ -27,8 +27,8 @@
 <body>
 <div class="container">
     <div class="body">
-        <fs:form action="/san-pham/update/${sanpham.ma}" method="post"
-                 modelAttribute="sanpham" >
+        <fs:form action="/Dong-SP/update/${dongsp.ma}" method="post"
+                 modelAttribute="dongsp" >
             <div class="mb-3">
                 <label  class="form-label">Mã :</label>
                 <fs:input type="text" name="ma" path="ma" class="form-control"  aria-describedby="emailHelp" required="" />
