@@ -16,7 +16,7 @@
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Document</title>
+    <title>Nha Sản Xuất</title>
 </head>
 <body class="container">
 <div>

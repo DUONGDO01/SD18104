@@ -25,9 +25,6 @@ public class SanPhamController {
 
     public SanPhamController() {
         this.sanpham = new ArrayList<>();
-//        sanpham.add(new SanPhamRequest("SP01","SamSungS21"));
-//        sanpham.add(new SanPhamRequest("SP02","SamSungS22"));
-//        sanpham.add(new SanPhamRequest("SP03","SamSungS23"));
     }
 
     @GetMapping("index")
@@ -45,45 +42,38 @@ public class SanPhamController {
 
     @PostMapping("store")
     public String store(@Valid @ModelAttribute("sanpham") SanPhamRequest request, BindingResult result) {
-//       this.sanpham.add(request);
+        SanPham sp = new SanPham();
+        sp.setMa(request.getMa());
+        sp.setTen(request.getTen());
+        this.repository.save(sp);
+
         return "redirect:/san-pham/index";
     }
 
     //delete
     @GetMapping("delete/{ma}")
     public String delete(@PathVariable("ma") String ma, SanPhamRequest request) {
-//        for (int i = 0;i<this.sanpham.size();i++){
-//            SanPhamRequest sp = this.sanpham.get(i);
-//            if (sp.getMa().equals(ma)){
-//                sanpham.remove(i);
-//                break;
-//            }
-//        }
+        SanPham sp = this.repository.findByMa(ma);
+        this.repository.delete(sp);
         return "redirect:/san-pham/index";
     }
 
     //update
     @GetMapping("edit/{ma}")
     public String edit(@PathVariable("ma") String ma, Model model, SanPhamRequest request) {
-//        for (int i = 0;i<this.sanpham.size();i++){
-//            SanPhamRequest sp = this.sanpham.get(i);
-//            if (sp.getMa().equals(ma)){
-//               model.addAttribute("sanpham" ,sp);
-//                break;
-//            }
-//        }
+        SanPham sp = this.repository.findByMa(ma);
+        model.addAttribute("sanpham", sp);
         return "SanPham/edit";
     }
 
     @PostMapping("update/{ma}")
     public String update(@PathVariable("ma") String ma, Model model, SanPhamRequest request) {
-//        for (int i = 0;i<this.sanpham.size();i++){
-//            SanPhamRequest sp = this.sanpham.get(i);
-//            if (sp.getMa().equals(ma)){
-//               this.sanpham.set(i,request);
-//                break;
-//            }
-//        }
+        SanPham find = this.repository.findByMa(ma);
+        SanPham sp = new SanPham();
+        sp.setId(find.getId());
+        sp.setMa(request.getMa());
+        sp.setTen(request.getTen());
+        this.repository.save(sp);
         return "redirect:/san-pham/index";
     }
 }

@@ -22,7 +22,7 @@
             font-family: Arial, sans-serif; /* Sử dụng phông chữ Arial hoặc một phông chữ hỗ trợ tiếng Việt khác */
         }
     </style>
-    <title>NhanVien</title>
+    <title>Nhà Sản Xuất</title>
 </head>
 <body>
 <div class="container">
@@ -31,7 +31,7 @@
                  modelAttribute="nsx" >
             <div class="mb-3">
                 <label  class="form-label">Mã :</label>
-                <fs:input type="text" name="ma" path="ma" class="form-control"  aria-describedby="emailHelp" required="" />
+                <fs:input type="text" name="ma" path="ma" class="form-control" required="" />
                 <span style="color: red">*</span> <fs:errors path="ma" cssStyle="color: red"></fs:errors>
 
             </div>

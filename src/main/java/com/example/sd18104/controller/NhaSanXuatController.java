@@ -25,8 +25,6 @@ public class NhaSanXuatController {
 
     public NhaSanXuatController() {
         this.nhaSX = new ArrayList<>();
-//         nhaSXRequests.add(new NhaSXRequest("Nha01","Ngoc Anh"));
-//         nhaSXRequests.add(new NhaSXRequest("Nha02","Duong Do"));
     }
 
     @GetMapping("index")
@@ -45,46 +43,38 @@ public class NhaSanXuatController {
 
     @PostMapping("store")
     public String store(@Valid @ModelAttribute("nsx") NhaSXRequest request, BindingResult result) {
-//         System.out.println(request.getMa());
-//         System.out.println(request.getTen());
-//         nhaSXRequests.add(request);
+        Nsx nsx = new Nsx();
+        nsx.setMa(request.getMa());
+        nsx.setTen(request.getTen());
+        this.repository.save(nsx);
         return "redirect:/nha-san-xuat/index";
     }
 
     //sua
     @GetMapping("edit/{ma}")
-    public String edti(@PathVariable("ma") String ma, Model m) {
-//         for(int i = 0; i<this.nhaSXRequests.size();i++){
-//             NhaSXRequest nv = this.nhaSXRequests.get(i);
-//             if (nv.getMa().equals(ma)){
-//                 m.addAttribute("nsx",nv);
-//             }
-//         }
+    public String edit(@PathVariable("ma") String ma, Model m) {
+        Nsx nsx = this.repository.findByMa(ma);
+        m.addAttribute("nsx", nsx);
         return "/NhaSanXuat/store";
     }
 
     @PostMapping("update/{ma}")
     public String update(@PathVariable("ma") String ma, NhaSXRequest request) {
-//         for (int i = 0;i<this.nhaSXRequests.size();i++){
-//             NhaSXRequest nsx = this.nhaSXRequests.get(i);
-//             if (nsx.getMa().equals(ma)){
-//                 this.nhaSXRequests.set(i,request);
-//                 break;
-//             }
-//         }
+
+        Nsx find = this.repository.findByMa(ma);
+        Nsx nsx = new Nsx();
+        nsx.setId(find.getId());
+        nsx.setMa(request.getMa());
+        nsx.setTen(request.getTen());
+        this.repository.save(nsx);
         return "redirect:/nha-san-xuat/index";
     }
 
     //xoa
     @GetMapping("delete/{ma}")
     public String delete(@PathVariable("ma") String ma) {
-//         for (int i =0 ;i<this.nhaSXRequests.size();i++){
-//             NhaSXRequest nsx = this.nhaSXRequests.get(i);
-//             if(nsx.getMa().equals(ma)){
-//                 this.nhaSXRequests.remove(i);
-//                 break;
-//             }
-//         }
+        Nsx nsx = this.repository.findByMa(ma);
+        this.repository.delete(nsx);
         return "redirect:/nha-san-xuat/index";
     }
 }
