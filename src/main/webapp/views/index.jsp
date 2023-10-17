@@ -40,6 +40,9 @@
                     <a class="nav-link active" aria-current="page" href="cua-hang/index">Cửa Hàng</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Dong-SP/index">Dòng Sản Phẩm</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="khach-hang/index">Khách Hàng</a>
                 </li>
                 <li class="nav-item">

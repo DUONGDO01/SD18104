@@ -53,10 +53,18 @@
         <td>${ds.thanhPho}</td>
         <td>${ds.quocGia}</td>
 <td><a href="/khach-hang/edit/${ds.ma}">Update</a> </td>
-    <td><a href="/khach-hang/delete/${ds.ma}">delete</a> </td>
+    <td><a href="/khach-hang/delete/${ds.ma}" onclick="xoa(event)">delete</a> </td>
 </tr>
     </c:forEach>
     </tbody>
 </table>
+<script>
+    function xoa(event) {
+        if (!confirm("Bạn có muốn xóa không")) {
+            event.preventDefault();
+        }
+    };
+
+</script>
 </body>
 </html>

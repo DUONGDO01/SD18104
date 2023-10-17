@@ -28,31 +28,31 @@
 <div class="container">
     <div class="body">
         <fs:form action="store" modelAttribute="chitietsp" method="post" >
-            <div class="mb-3">
-                <label  for="" class="form-label">Mã Sản Phẩm :</label>
-                <fs:input type="text" name="idSP" path="idSP" class="form-control"  aria-describedby="emailHelp" required="" />
-                <span style="color: red">*</span> <fs:errors path="idSP" cssStyle="color: red"></fs:errors>
+<%--            <div class="mb-3">--%>
+<%--                <label  for="" class="form-label">Mã Sản Phẩm :</label>--%>
+<%--                <fs:input type="text" name="idSP" path="idSP" class="form-control"  aria-describedby="emailHelp" required="" />--%>
+<%--                <span style="color: red">*</span> <fs:errors path="idSP" cssStyle="color: red"></fs:errors>--%>
 
-            </div>
-            <div class="mb-3">
-                <label for="" class="form-label">Mã Nhà Sản Xuất :</label>
-                <fs:input type="text" name="idNsx" path="idNsx" class="form-control" />
-                <fs:errors path="idNsx" cssStyle="color: red"></fs:errors>
-            </div>
+<%--            </div>--%>
+<%--            <div class="mb-3">--%>
+<%--                <label for="" class="form-label">Mã Nhà Sản Xuất :</label>--%>
+<%--                <fs:input type="text" name="idNsx" path="idNsx" class="form-control" />--%>
+<%--                <fs:errors path="idNsx" cssStyle="color: red"></fs:errors>--%>
+<%--            </div>--%>
 
-            <div class="mb-3">
-                <label for="" class="form-label"> Mã Màu Sắc :</label>
-                <fs:input type="text" name="idMauSac" path="idMauSac" class="form-control"  aria-describedby="emailHelp"/>
+<%--            <div class="mb-3">--%>
+<%--                <label for="" class="form-label"> Mã Màu Sắc :</label>--%>
+<%--                <fs:input type="text" name="idMauSac" path="idMauSac" class="form-control"  aria-describedby="emailHelp"/>--%>
 
-            </div>
-            <div class="mb-3">
-                <label for="" class="form-label">Mã Dòng Sản Phẩm : </label>
-                <fs:input type="text" name="idDongSP" path="idDongSP" class="form-control" id=""/>
-            </div>
+<%--            </div>--%>
+<%--            <div class="mb-3">--%>
+<%--                <label for="" class="form-label">Mã Dòng Sản Phẩm : </label>--%>
+<%--                <fs:input type="text" name="idDongSP" path="idDongSP" class="form-control" id=""/>--%>
+<%--            </div>--%>
             <div class="mb-3">
                 <label for="" class="form-label">Năm Bảo Hành :</label>
-                <fs:input type="number" name="namBH"  path="namBH" class="form-control" />
-                <fs:errors path="namBH" cssStyle="color: red"></fs:errors>
+                <fs:input type="number" name="namBh"  path="namBh" class="form-control" />
+                <fs:errors path="namBh" cssStyle="color: red"></fs:errors>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Mô Tả :</label>

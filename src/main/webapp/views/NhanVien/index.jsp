@@ -52,10 +52,18 @@
         <td>${ds.sdt}</td>
         <td>${ds.trangThai==0?'Hoạt Động':'Không'}</td>
     <td><a href="/nhan-vien/edit/${ds.ma}">Update</a></td>
-    <td><a href="/nhan-vien/delete/${ds.ma}">Delete</a></td>
+    <td><a href="/nhan-vien/delete/${ds.ma}" onclick="xoa(event)">Delete</a></td>
 </tr>
     </c:forEach>
     </tbody>
 </table>
+<script>
+    function xoa(event) {
+        if (!confirm("Bạn có muốn xóa không")) {
+            event.preventDefault();
+        }
+    };
+
+</script>
 </body>
 </html>

@@ -38,10 +38,18 @@
             <td>${ch.ma}</td>
             <td>${ch.ten}</td>
             <td><a href="/mau-sac/edit/${ch.ma}">Update</a> </td>
-            <td><a href="/mau-sac/delete/${ch.ma}">delete</a> </td>
+            <td><a href="/mau-sac/delete/${ch.ma}" onclick="event">delete</a> </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+<script>
+    function xoa(event) {
+        if (!confirm("Bạn có muốn xóa không")) {
+            event.preventDefault();
+        }
+    };
+
+</script>
 </body>
 </html>

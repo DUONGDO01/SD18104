@@ -44,10 +44,18 @@
         <td>${ch.thanhPho}</td>
         <td>${ch.quocGia}</td>
 <td><a href="/cua-hang/edit/${ch.ma}">Update</a> </td>
-    <td><a href="/cua-hang/delete/${ch.ma}">delete</a> </td>
+    <td><a href="/cua-hang/delete/${ch.ma}" onclick="xoa(event)">delete</a> </td>
 </tr>
     </c:forEach>
     </tbody>
 </table>
+<script>
+    function xoa(event) {
+        if (!confirm("Bạn có muốn xóa không")) {
+            event.preventDefault();
+        }
+    };
+
+</script>
 </body>
 </html>

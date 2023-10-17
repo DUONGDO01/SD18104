@@ -1,13 +1,11 @@
 package com.example.sd18104.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -21,19 +19,20 @@ import java.util.UUID;
 public class ChiTietSp {
     @Id
     @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
 //    @Column(name = "IdSP")
-//    private null idSp;
+//    private UUID idSp;
 //
 //    @Column(name = "IdNsx")
-//    private null idNsx;
+//    private UUID idNsx;
 //
 //    @Column(name = "IdMauSac")
-//    private null idMauSac;
+//    private UUID idMauSac;
 //
 //    @Column(name = "IdDongSP")
-//    private null idDongSp;
+//    private UUID idDongSp;
 
     @Column(name = "NamBH")
     private Integer namBh;

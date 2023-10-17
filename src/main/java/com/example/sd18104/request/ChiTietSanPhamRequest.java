@@ -1,9 +1,13 @@
 package com.example.sd18104.request;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,21 +15,21 @@ import lombok.Setter;
 @Setter
 public class ChiTietSanPhamRequest {
 
-    private String idSP;
+//    private UUID idSp;
+//
+//    private UUID idNsx;
+//
+//    private UUID idMauSac;
+//
+//    private UUID idDongSp;
 
-    private String idNsx;
-
-    private String idMauSac;
-
-    private String idDongSP;
-
-    private Integer namBH;
+    private Integer namBh;
 
     private String moTa;
 
     private Integer soLuongTon;
 
-    private Double giaNhap;
+    private BigDecimal giaNhap;
 
-    private Double giaBan;
+    private BigDecimal giaBan;
 }

@@ -29,6 +29,7 @@ public class KhachHangController {
     @Autowired
     private KhachHangRepository repository;
 
+
     public KhachHangController() {
 //        String dateString = null;
 //        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

@@ -27,10 +27,10 @@
 <table class="table table-striped">
     <thead>
     <tr>
-        <td>Mã SP</td>
-        <td>Mã NSX</td>
-        <td>Mã Màu Sắc</td>
-        <td>Mã Dòng SP</td>
+<%--        <td>Mã SP</td>--%>
+<%--        <td>Mã NSX</td>--%>
+<%--        <td>Mã Màu Sắc</td>--%>
+<%--        <td>Mã Dòng SP</td>--%>
         <td>NămBH</td>
         <td>Mô Tả</td>
         <td>Số Lượng Tồn</td>
@@ -42,19 +42,19 @@
     <tbody >
     <c:forEach items="${ chitietsp }" var="ct">
 <tr>
-        <td>${ct.idSP}</td>
-        <td>${ct.idNsx}</td>
-        <td>${ct.idMauSac}</td>
-        <td>${ct.idDongSP}</td>
-        <td>${ct.namBH}</td>
+<%--        <td>${ct.idSP}</td>--%>
+<%--        <td>${ct.idNsx}</td>--%>
+<%--        <td>${ct.idMauSac}</td>--%>
+<%--        <td>${ct.idDongSP}</td>--%>
+        <td>${ct.namBh}</td>
         <td>${ct.moTa}</td>
         <td>${ct.soLuongTon}</td>
         <td>${ct.giaNhap}VND</td>
         <td>${ct.giaBan}VND</td>
 
 
-<td><a href="/chi-tiet-sp/edit/${ct.idSP}">Update</a> </td>
-    <td><a href="/chi-tiet-sp/delete/${ct.idSP}">delete</a> </td>
+<%--<td><a href="/chi-tiet-sp/edit/${ct.idSP}">Update</a> </td>--%>
+<%--    <td><a href="/chi-tiet-sp/delete/${ct.idSP}">delete</a> </td>--%>
 </tr>
     </c:forEach>
     </tbody>
